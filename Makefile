@@ -1,11 +1,12 @@
 CC=gcc
 CFLAGS= -c -Wall
 OBJECTS= lobby.o
+LIBS = -lcryptsetup
 
 all: crypt
 
 crypt: $(OBJECTS)
-	$(CC) $(OBJECTS) -o crypt -lcryptsetup
+	$(CC) $(OBJECTS) -o crypt $(LIBS)
 
 %.o: %.cc
 	$(CC) $(CFLAGS) $<
